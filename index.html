@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CV dan portofolio pribadi">
+  <title>Curriculum Vitae | Savrilna Bilbina</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #183153;
+      --blue: #5b8bd9;
+      --sky: #eaf2ff;
+      --paper: #f8faff;
+      --ink: #29384c;
+      --muted: #718096;
+      --line: #e2eaf5;
+    }
+
+    * {
+      scroll-behavior: smooth;
+      scroll-margin-top: 88px;
+    }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    .brand {
+      font-family: 'Manrope', sans-serif;
+    }
+
+    .navbar {
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(12px);
+    }
+
+    .brand {
+      color: var(--navy);
+      font-weight: 800;
+      letter-spacing: -0.05em;
+    }
+
+    .nav-link {
+      color: #5e6c80;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .nav-link:hover {
+      color: var(--blue);
+    }
+
+    .top-note {
+      color: #73829a;
+      font-size: 0.85rem;
+    }
+
+    .hero {
+      padding: 120px 0 65px;
+      background: linear-gradient(135deg, #f8faff 15%, #eef4ff 100%);
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 13px;
+      border: 1px solid #d8e5f8;
+      border-radius: 50px;
+      background: #fff;
+      color: #365987;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #54a77a;
+    }
+
+    .hero h1 {
+      color: var(--navy);
+      font-size: clamp(2.45rem, 6vw, 4.5rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.07em;
+    }
+
+    .hero h1 span {
+      color: var(--blue);
+    }
+
+    .hero-desc {
+      max-width: 680px;
+      color: #66758b;
+      line-height: 1.9;
+    }
+
+    .profile-img {
+      width: 100%;
+      max-width: 310px;
+      aspect-ratio: 4 / 4.5;
+      object-fit: cover;
+      border: 7px solid #fff;
+      border-radius: 26px;
+      box-shadow: 0 18px 55px #1b355b17;
+    }
+
+    .photo-label {
+      position: relative;
+      display: inline-block;
+      margin-top: -25px;
+      padding: 9px 13px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: 0 8px 25px #1b355b0b;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .pill {
+      display: inline-block;
+      margin: 4px 4px 0 0;
+      padding: 7px 12px;
+      border: 1px solid var(--line);
+      border-radius: 50px;
+      background: #fff;
+      color: #49617f;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .section {
+      padding: 72px 0;
+    }
+
+    .section:nth-of-type(even) {
+      background: #f0f5fd;
+    }
+
+    .section-kicker {
+      color: var(--blue);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      color: var(--navy);
+      font-size: clamp(1.8rem, 4vw, 2.55rem);
+      font-weight: 800;
+      letter-spacing: -0.055em;
+    }
+
+    .section-sub {
+      max-width: 700px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .panel {
+      height: 100%;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 19px;
+      background: #fff;
+      box-shadow: 0 8px 24px #1b355b05;
+    }
+
+    .panel h3 {
+      color: var(--navy);
+      font-size: 1.04rem;
+      font-weight: 800;
+    }
+
+    .label {
+      margin-bottom: 4px;
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+
+    .value {
+      color: #33445d;
+      font-weight: 700;
+      overflow-wrap: anywhere;
+    }
+
+    .timeline-date {
+      margin-bottom: 7px;
+      color: var(--blue);
+      font-size: 0.79rem;
+      font-weight: 800;
+    }
+
+    .thumb {
+      width: 100%;
+      height: 145px;
+      margin-bottom: 17px;
+      border-radius: 13px;
+      background: #e8f0fc;
+      object-fit: cover;
+    }
+
+    .thumb-placeholder {
+      display: grid;
+      width: 100%;
+      height: 145px;
+      margin-bottom: 17px;
+      place-items: center;
+      border-radius: 13px;
+      background: linear-gradient(135deg, #dce9fc, #f6f9ff);
+      font-size: 2.4rem;
+    }
+
+    .bullet-list {
+      padding-left: 1.1rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.75;
+    }
+
+    .bullet-list li {
+      margin-bottom: 4px;
+      padding-left: 3px;
+    }
+
+    .skill-group {
+      margin-bottom: 20px;
+    }
+
+    .skill-group h3 {
+      margin-bottom: 8px;
+      color: var(--navy);
+      font-size: 1rem;
+      font-weight: 800;
+    }
+
+    .contact-panel {
+      padding: clamp(25px, 5vw, 48px);
+      border-radius: 25px;
+      background: var(--navy);
+      color: #fff;
+    }
+
+    .contact-panel h2 {
+      font-weight: 800;
+      letter-spacing: -0.05em;
+    }
+
+    .contact-panel p {
+      color: #d0def2;
+      line-height: 1.8;
+    }
+
+    .contact-item {
+      display: block;
+      margin-top: 10px;
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-item:hover {
+      color: #bdd6ff;
+    }
+
+    .btn-primary-custom {
+      display: inline-block;
+      padding: 11px 17px;
+      border: 1px solid var(--navy);
+      border-radius: 10px;
+      background: var(--navy);
+      color: #fff;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .btn-primary-custom:hover {
+      border-color: var(--blue);
+      background: var(--blue);
+      color: #fff;
+    }
+
+    footer {
+      color: #8290a5;
+      font-size: 0.82rem;
+    }
+
+    @media (max-width: 767px) {
+      .hero {
+        padding-top: 105px;
+      }
+
+      .profile-img {
+        max-width: 235px;
+      }
+
+      .profile-wrap {
+        margin-top: 20px;
+      }
+
+      .section {
+        padding: 55px 0;
+      }
+
+      .hero-desc {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar: tautan menuju section di halaman ini -->
+  <nav class="navbar navbar-expand-lg fixed-top border-bottom">
+    <div class="container py-2">
+      <a class="navbar-brand brand" href="#home">Curriculum Vitae<span style="color:var(--blue)"></span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCV" aria-controls="navCV" aria-expanded="false" aria-label="Buka menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navCV">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="#pendidikan">Pendidikan</a></li>
+          <li class="nav-item"><a class="nav-link" href="#pengalaman">Pengalaman</a></li>
+          <li class="nav-item"><a class="nav-link" href="#organisasi">Organisasi</a></li>
+          <li class="nav-item"><a class="nav-link" href="#keahlian">Keahlian</a></li>
+          <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO / PROFIL UTAMA -->
+  <header class="hero" id="home">
+    <div class="container">
+      <div class="row align-items-center g-4 g-lg-5">
+        <div class="col-lg-8 order-2 order-lg-1">
+          <div class="d-flex flex-wrap gap-2 mb-3">
+            <span class="status">🎓 Universitas Budi Luhur</span>
+            <span class="status">📍 Jakarta Selatan</span>
+          </div>
+          <p class="top-note mb-2">this is me ♡</p>
+          <h1 class="mb-3">Halo,saya <br><span>Savrilna Bilbina</span></h1>
+          <p class="hero-desc mb-3">Mahasiswa Sistem Informasi yang tertarik pada analisis sistem informasi, pemetaan proses bisnis, serta perancangan solusi teknologi yang efektif bagi kebutuhan bisnis. Saya juga senang mempelajari hal baru, mengembangkan keterampilan, dan mendapatkan pengalaman melalui tugas kuliah maupun proyek pribadi.</p>
+          <p class="hero-desc mb-4">Saat ini saya ingin terus mengembangkan kemampuan dan mencari kesempatan untuk belajar, berkolaborasi, serta mendapatkan pengalaman profesional.</p>
+          <a class="btn-primary-custom" href="#pengalaman">Lihat pengalaman ↓</a>
+        </div>
+  </header>
+
+  <main>
+    <!-- PENDIDIKAN -->
+    <section class="section" id="pendidikan">
+      <div class="container">
+        <div class="section-kicker mb-2">01 / Riwayat</div>
+        <h2 class="section-title mb-2">Pendidikan </h2>
+        <div class="row g-4">
+          <div class="col-md-6">
+            <article class="panel">
+              <div class="timeline-date">2025 - Sekarang</div>
+              <h3>Universitas Budi Luhur</h3>
+              <p class="text-secondary mb-1">Fakultas Teknologi Informasi </p>
+              <p class="mb-0">S1 Sistem Informasi</p>
+            </article>
+          </div>
+          <div class="col-md-6">
+            <article class="panel">
+              <div class="timeline-date">2022 - 2025 </div>
+              <h3>SMK Muhammadiyah 15 </h3>
+              <p class="text-secondary mb-1">Desain Komunikasi Visual</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PENGALAMAN DAN PROYEK -->
+    <section class="section" id="pengalaman">
+      <div class="container">
+        <div class="section-kicker mb-2">02 / Perjalanan</div>
+        <h2 class="section-title mb-2">Proyek & Pengalaman </h2>
+          <div class="col-lg-6">
+            <article class="panel">
+              <h3>Praktik Kerja Lapangan (PKL) — Pusdiklat Keuangan Umum </h3>
+              <ul class="bullet-list">
+                <li>Membuat desain grafis untuk kebutuhan dan kegiatan kantor</li>
+                <li>Membantu proses pengambilan konten untuk kebutuhan publikasi kantor</li>
+                <li>Mengambil konten foto dan video untuk dokumentasi kegiatan kantor</li>
+              </ul>
+              <span class="pill">Adobe Photoshop</span><span class="pill">Canva</span><span class="pill">Capcut</span>
+            </article>
+          </div>
+          <div class="col-lg-6">
+            <article class="panel">
+              <h3>Bookstagrammer </h3>
+              <ul class="bullet-list">
+                <li>Membuat konten rekomendasi dan ulasan novel di media sosial</li>
+                <li>Membuat konten promosi novel untuk memperkenalkan cerita kepada pembaca</li>
+                <li>Menyusun konsep promosi berdasarkan genre, alur, dan karakter cerita</li>
+              </ul>
+              <span class="pill">Canva </span><span class="pill">Capcut</span><span class="pill">Pinterest</span>
+            </article>
+            </div>
+          <div class="col-lg-6">
+            <article class="panel">
+              <h3>Lomba Karya Ilmiah Remaja Nasional — Ikatan Guru Indonesia (IGI) Pacitan </h3>
+              <ul class="bullet-list">
+                <li>Berpartisipasi dalam lomba karya ilmiah remaja tingkat nasional yang diselenggarakan oleh Ikatan Guru Indonesia (IGI) Pacitan</li>
+                <li>Menyusun karya ilmiah mengenai pengelolaan sampah organik dan anorganik melalui penerapan program bank sampah di lingkungan sekolah</li>
+                <li>Mengembangkan pembahasan mengenai pengelolaan sampah yang lebih terstruktur untuk mendukung kepedulian terhadap lingkungan</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ORGANISASI  -->
+    <section class="section" id="organisasi">
+      <div class="container">
+        <div class="section-kicker mb-2">03 / Aktivitas</div>
+        <h2 class="section-title mb-2">Komunitas </h2>
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="panel">
+              <h3>Literasi </h3>
+              <p class="text-secondary mb-2"> Bendahara Umum</p>
+              <ul class="bullet-list">
+                <li>Mengelola pencatatan pemasukan dan pengeluaran dana organisasi</li>
+                <li>Memantau penggunaan dana agar sesuai dengan kebutuhan kegiatan organisasi</li>
+                <li>Mengembangkan pembahasan mengenai pengelolaan sampah yang lebih terstruktur untuk mendukung kepedulian terhadap lingkungan</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+                
+    <!-- KEAHLIAN -->
+    <section class="section" id="keahlian">
+      <div class="container">
+        <div class="section-kicker mb-2">04 / Kemampuan</div>
+        <h2 class="section-title mb-2">Keahlian ⚡</h2>
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <div class="panel">
+              <h3>Soft Skill</h3>
+              <div class="mt-3"><span class="pill">Kerja Sama Tim</span><span class="pill">Bertanggung jawab</span><span class="pill">Komunikasi</span><span class="pill">Manajemen waktu</span>
+              <hr class="my-4" style="border-color:var(--line)">
+              <h3>Bahasa</h3>
+              <span class="pill">Bahasa Indonesia</span><span class="pill">Bahasa Inggris</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KONTAK -->
+    <section class="section" id="kontak">
+      <div class="container">
+        <div class="contact-panel">
+          <div class="row align-items-center g-4">
+            <div class="col-lg-7">
+              <div class="section-kicker mb-2" style="color:#a9c9ff"></div>
+              <h2 class="display-6">Let's Connect 💌</h2>
+              <p class="mb-0 mt-3">Terbuka untuk kesempatan belajar, proyek, dan kolaborasi. Jangan ragu untuk menghubungi saya melalui kontak berikut.</p>
+            </div>
+            <div class="col-lg-5">
+              <a class="contact-item">✉️ Email: bilnasavrilna46@gmail.com</a>
+              <a class="contact-item">📷 Instagram: svrilnna</a>
+              <a class="contact-item">🔗 Contact: 08561778534</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="py-4 border-top bg-white">
+    <div class="container d-flex flex-column flex-md-row justify-content-between gap-2">
+      <span>© <span id="year"></span> SavrilnaBilbina. Dibuat dengan Bootstrap.</span>
+      <a class="text-decoration-none fw-bold" style="color:var(--blue)" href="#home">Kembali ke atas ↑</a>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
